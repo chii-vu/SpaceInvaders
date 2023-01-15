@@ -19,7 +19,7 @@ Locate the `SpaceInvaders.jar` and run it using the command `java -jar SpaceInva
 - Shoot: Space bar
 
 ## UML Diagram
-![space-invaders-uml](https://user-images.githubusercontent.com/115325256/212561610-2d856437-0177-4efb-a903-92d28826a6bc.png)
+![Screen Shot 2023-01-15 at 1 05 33 PM](https://user-images.githubusercontent.com/115325256/212561732-8625b5e5-da4d-4e80-a792-a002ab7478da.png)
 
 ## Additional information
 
