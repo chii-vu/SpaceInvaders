@@ -12,13 +12,14 @@ https://user-images.githubusercontent.com/115325256/212560853-5bc654f9-528c-49a6
 
 Locate the `SpaceInvaders.jar` and run it using the command `java -jar SpaceInvaders.jar`. The game should start up and you can start playing.
 
-## How to play
-
-Controls:
+#### Controls:
 
 - Move left: Left arrow key
 - Move right: Right arrow key
 - Shoot: Space bar
+
+## UML Diagram
+![space-invaders-uml](https://user-images.githubusercontent.com/115325256/212561610-2d856437-0177-4efb-a903-92d28826a6bc.png)
 
 ## Additional information
 
