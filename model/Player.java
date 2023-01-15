@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package model;
 
 import javax.swing.*;
@@ -104,7 +91,8 @@ public class Player extends GameObject {
     /**
      * No actions for the player at clock ticks.
      */
-    protected void update() {}
+    protected void update() {
+    }
 
     /**
      * Move to the left.
@@ -147,7 +135,6 @@ public class Player extends GameObject {
             }
         }
     }
-
 
     /**
      * Handle the collision with another object.

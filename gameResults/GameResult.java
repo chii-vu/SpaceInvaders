@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package gameResults;
 
 import java.io.Serializable;
@@ -39,7 +26,7 @@ public class GameResult implements Serializable {
     /**
      * Initialize this instance with the argument values.
      * 
-     * @param id the id of the player
+     * @param id    the id of the player
      * @param score the score attained in the play
      * @param level the level attained in the play
      */

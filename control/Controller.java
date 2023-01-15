@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package control;
 
 import gameResults.GameResult;
@@ -31,8 +18,10 @@ import java.awt.event.KeyListener;
 
 /**
  * The class to start the space invaders game. It is also the controller in the
- * model-view-controller architecture of the system, i.e., when an event arrives, it takes
- * appropriate action to update the game and the view. It also observes when the game is over to
+ * model-view-controller architecture of the system, i.e., when an event
+ * arrives, it takes
+ * appropriate action to update the game and the view. It also observes when the
+ * game is over to
  * respond to it.
  */
 public class Controller implements KeyListener, ActionListener, GameObserver {
@@ -54,19 +43,23 @@ public class Controller implements KeyListener, ActionListener, GameObserver {
     }
 
     /**
-     * An interface to the game with the methods that the Controller can apply to the game.
+     * An interface to the game with the methods that the Controller can apply to
+     * the game.
      */
     private GameControl gameControl;
 
     /**
-     * An interface to the game with the methods that can be used to access information from the
+     * An interface to the game with the methods that can be used to access
+     * information from the
      * game.
      */
     private GameInfoProvider gameInfo;
 
     /**
-     * When an action event is received, take the action specified by its command: start a new game,
-     * save the score from the last game, show the welcome view, or show the high scores.
+     * When an action event is received, take the action specified by its command:
+     * start a new game,
+     * save the score from the last game, show the welcome view, or show the high
+     * scores.
      * 
      * @param event the action event that records the type of action to take.
      */
@@ -91,8 +84,7 @@ public class Controller implements KeyListener, ActionListener, GameObserver {
             /* Obtain the id entered by the user. */
             String id = ((JTextField) event.getSource()).getText();
             if (id != null && !id.equals("")) {
-                GameResult result =
-                        new GameResult(id, gameInfo.getPlayerScore(), gameInfo.getLevel());
+                GameResult result = new GameResult(id, gameInfo.getPlayerScore(), gameInfo.getLevel());
                 HighScores.getInstance().saveGameResult(result);
             }
             view.showWelcomeView(this); // this is passed in as an ActionListener
@@ -137,16 +129,20 @@ public class Controller implements KeyListener, ActionListener, GameObserver {
     /**
      * No action for a key press.
      */
-    public void keyPressed(KeyEvent e) {}
+    public void keyPressed(KeyEvent e) {
+    }
 
     /**
      * No action for a key typed - use key release.
      */
-    public void keyTyped(KeyEvent e) {}
+    public void keyTyped(KeyEvent e) {
+    }
 
     /**
-     * When notified of a game change, check for the end of the game. If it is the end of game, show
-     * that final view for 2.5 seconds, and then either display the welcome view, or, if the score
+     * When notified of a game change, check for the end of the game. If it is the
+     * end of game, show
+     * that final view for 2.5 seconds, and then either display the welcome view,
+     * or, if the score
      * is high enough to be saved, display the save score view.
      */
     public void gameChanged() {
@@ -165,8 +161,10 @@ public class Controller implements KeyListener, ActionListener, GameObserver {
                 }
             });
             /*
-             * Instead of just putting this thread to sleep, a Timer is needed as the current thread
-             * (the event dispatch thread) needs to continue execution to update the view to show
+             * Instead of just putting this thread to sleep, a Timer is needed as the
+             * current thread
+             * (the event dispatch thread) needs to continue execution to update the view to
+             * show
              * the game over message.
              */
             t.setRepeats(false);

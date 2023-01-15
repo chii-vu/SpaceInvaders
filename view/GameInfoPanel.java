@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package view;
 
 import java.awt.Color;
@@ -21,8 +8,10 @@ import model.*;
 import util.PropertiesDiskStorage;
 
 /**
- * A panel across the top that displays the score, the level, and the number of remaining lives of
- * the user. It is a GameModelObserver, so method gameChanged() is invoked whenever the game status
+ * A panel across the top that displays the score, the level, and the number of
+ * remaining lives of
+ * the user. It is a GameModelObserver, so method gameChanged() is invoked
+ * whenever the game status
  * changes.
  */
 public class GameInfoPanel extends GraphicsPanel implements GameObserver {
@@ -39,7 +28,8 @@ public class GameInfoPanel extends GraphicsPanel implements GameObserver {
     /**
      * Initialize the panel ready for painting.
      * 
-     * @param gameInfo the interface to the game used to obtain information from the game
+     * @param gameInfo the interface to the game used to obtain information from the
+     *                 game
      */
     public GameInfoPanel(GameInfoProvider gameInfo) {
         this.gameInfo = gameInfo;
@@ -84,10 +74,11 @@ public class GameInfoPanel extends GraphicsPanel implements GameObserver {
     public static final int LIVES_WIDTH = 18;
 
     /**
-     * In the upper lefthand corner, give the label Lives, and draw an icon for each life recorded
+     * In the upper lefthand corner, give the label Lives, and draw an icon for each
+     * life recorded
      * in lives. Draw them in rows with LIVES_PER_ROW icons per row.
      * 
-     * @param lives the number of icons to show for the players lives remaining
+     * @param lives    the number of icons to show for the players lives remaining
      * @param graphics the graphics used for painting
      */
     private void drawLives(int lives, Graphics2D graphics) {

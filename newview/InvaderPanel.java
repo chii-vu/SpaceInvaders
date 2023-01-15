@@ -1,10 +1,3 @@
-/*
-Chi Vu
-cpv616
-11299008
-CMPT 270
- */
-
 package newview;
 
 import model.GameInfoProvider;
@@ -30,18 +23,19 @@ public class InvaderPanel extends GraphicsPanel implements GameObserver {
     /**
      * The two images to display invader with arms up or down.
      */
-     private BufferedImage image1 = ImageCache.getInstance().getImage("invader1.png");
-     private BufferedImage image2 = ImageCache.getInstance().getImage("invader2.png");
+    private BufferedImage image1 = ImageCache.getInstance().getImage("invader1.png");
+    private BufferedImage image2 = ImageCache.getInstance().getImage("invader2.png");
 
     /**
      * Current image of invader to be changed if no. of invaders changes
      */
-     private BufferedImage currentImage;
+    private BufferedImage currentImage;
 
     /**
      * Initialize the panel ready for painting.
      *
-     * @param gameInfo the interface to the game used to obtain information from the game
+     * @param gameInfo the interface to the game used to obtain information from the
+     *                 game
      */
     public InvaderPanel(GameInfoProvider gameInfo) {
         this.gameInfo = gameInfo;
@@ -83,8 +77,7 @@ public class InvaderPanel extends GraphicsPanel implements GameObserver {
 
         // draw current image
         bufferedGraphics.drawImage(currentImage, 90, 50,
-                3*currentImage.getWidth(), 3*currentImage.getHeight(), null);
-
+                3 * currentImage.getWidth(), 3 * currentImage.getHeight(), null);
 
         // display current heat state of player
         if (gameInfo.getHeat() < 5) {

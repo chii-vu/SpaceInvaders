@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package view;
 
 import gameResults.HighScores;
@@ -30,20 +17,23 @@ import javax.swing.JTextField;
 import javax.swing.JPanel;
 
 /**
- * A panel to display the user's score, and a text field for the user to enter their id so that
+ * A panel to display the user's score, and a text field for the user to enter
+ * their id so that
  * their score can be saved as a high score.
  */
 public class SaveScorePanel extends ViewPanel {
     public static final long serialVersionUID = 1;
 
     /**
-     * Create a panel to display the user's score, a text field for the user to enter their id.
+     * Create a panel to display the user's score, a text field for the user to
+     * enter their id.
      * 
-     * @param width the width of the panel
-     * @param height the height of the panel
-     * @param score the user's score
-     * @param level the user's level
-     * @param listener the class listening for the event that signals the Enter key was pressed
+     * @param width    the width of the panel
+     * @param height   the height of the panel
+     * @param score    the user's score
+     * @param level    the user's level
+     * @param listener the class listening for the event that signals the Enter key
+     *                 was pressed
      */
     public SaveScorePanel(int width, int height, int score, int level, ActionListener listener) {
         setSize(width, height);
@@ -55,8 +45,7 @@ public class SaveScorePanel extends ViewPanel {
         add(Box.createRigidArea(new Dimension(0, height / 5)));
 
         /* Place a header with the welcome message. */
-        JLabel header =
-                new JLabel("You are in the top " + HighScores.MAX_NUMBER_SCORES_SAVED + "!");
+        JLabel header = new JLabel("You are in the top " + HighScores.MAX_NUMBER_SCORES_SAVED + "!");
         header.setFont(new Font("Arial", Font.BOLD, 48));
         header.setForeground(charColor);
         header.setAlignmentX(Component.CENTER_ALIGNMENT);

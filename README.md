@@ -17,3 +17,7 @@ Controls:
 - Move left: Left arrow key
 - Move right: Right arrow key
 - Shoot: Space bar
+
+## Additional information
+
+This game was written as a project for the course CMPT 270: Developing Object-Oriented Systems at the University of Saskatchewan.

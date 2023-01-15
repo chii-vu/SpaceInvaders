@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package model;
 
 import java.util.List;
@@ -77,7 +64,6 @@ public class Game implements GameControl, GameInfoProvider {
     /** The current level in the game. */
     protected int level;
 
-
     /**
      * Initialize, but not start, the game.
      */
@@ -101,7 +87,8 @@ public class Game implements GameControl, GameInfoProvider {
         player = new Player(x, y, this);
 
         /*
-         * Each barricade is 3 blocks high and 4 blocks wide. Use equal gaps between the barricades
+         * Each barricade is 3 blocks high and 4 blocks wide. Use equal gaps between the
+         * barricades
          * and on both sides.
          */
         int barricadeWidth = 4 * Block.WIDTH;
@@ -118,7 +105,8 @@ public class Game implements GameControl, GameInfoProvider {
     }
 
     /**
-     * Add a barricade with (xTopCenter, yTopCenter) as the coordinates for the top center of the
+     * Add a barricade with (xTopCenter, yTopCenter) as the coordinates for the top
+     * center of the
      * barricade.
      */
     private void addBarricade(int xTopCenter, int yTopCenter) {
@@ -162,11 +150,12 @@ public class Game implements GameControl, GameInfoProvider {
     }
 
     /**
-     * To start a new level, increment the level number and generate a new set of invaders.
+     * To start a new level, increment the level number and generate a new set of
+     * invaders.
      */
     private void initializeNextLevel() {
         level = level + 1;
-        //lasersList = null; //laser = null;
+        // lasersList = null; //laser = null;
         player.moveToLeftSide();
         for (int i = 0; i < INVADER_ROWS; i++) {
             for (int j = 0; j < INVADER_COLUMNS; j++) {
@@ -217,7 +206,8 @@ public class Game implements GameControl, GameInfoProvider {
     }
 
     /**
-     * An object whose lock is used to synchronize the update and painting of invaders.
+     * An object whose lock is used to synchronize the update and painting of
+     * invaders.
      */
     private Object invaderSynchronizationObject;
 
@@ -288,7 +278,8 @@ public class Game implements GameControl, GameInfoProvider {
     }
 
     /**
-     * Has the game been lost? The game is lost if the player is dead or an invader crosses the
+     * Has the game been lost? The game is lost if the player is dead or an invader
+     * crosses the
      * vertical level of the player.
      * 
      * @return is this a loss situation?
@@ -309,7 +300,8 @@ public class Game implements GameControl, GameInfoProvider {
     }
 
     /**
-     * Switch the state of the paused field and take appropriate action for the change in the paused
+     * Switch the state of the paused field and take appropriate action for the
+     * change in the paused
      * status.
      */
     public void togglePaused() {
@@ -354,7 +346,7 @@ public class Game implements GameControl, GameInfoProvider {
         for (Missile missile : missilesList)
             gameObjects.add(missile);
 
-        for (Laser laser: lasersList)
+        for (Laser laser : lasersList)
             gameObjects.add(laser);
 
         for (Explosion explosion : explosionsList)
@@ -377,7 +369,7 @@ public class Game implements GameControl, GameInfoProvider {
      * 
      * @param laser the laser to be added to the game
      */
-    protected void addLaser(Laser laser){
+    protected void addLaser(Laser laser) {
         lasersList.add(laser);
     }
 

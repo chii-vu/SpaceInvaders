@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package model;
 
 import util.PropertiesDiskStorage;
@@ -39,7 +26,8 @@ public abstract class GameObject {
     protected boolean isDead;
 
     /**
-     * The list of the names of the images of the object to be used to display the object on the
+     * The list of the names of the images of the object to be used to display the
+     * object on the
      * screen.
      */
     protected List<String> imageNames;
@@ -50,9 +38,9 @@ public abstract class GameObject {
     /**
      * Initialize this instance, excluding the name of the collection of images.
      * 
-     * @param x the initial x position
-     * @param y the initial y position
-     * @param game the game
+     * @param x             the initial x position
+     * @param y             the initial y position
+     * @param game          the game
      * @param imageNamesKey the key for accessing the file names of the images
      */
     public GameObject(int x, int y, Game game, String imageNamesKey) {

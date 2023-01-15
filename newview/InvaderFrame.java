@@ -1,10 +1,3 @@
-/*
-Chi Vu
-cpv616
-11299008
-CMPT 270
- */
-
 package newview;
 
 import model.GameInfoProvider;

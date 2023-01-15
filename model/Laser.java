@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package model;
 
 /**
@@ -32,8 +19,8 @@ public class Laser extends GameObject {
     /**
      * Initialize the laser.
      * 
-     * @param x the initial x-coordinate for the missile
-     * @param y the initial y-coordinate for the missile
+     * @param x    the initial x-coordinate for the missile
+     * @param y    the initial y-coordinate for the missile
      * @param game the game being played
      */
     public Laser(int x, int y, Game game) {
@@ -44,7 +31,8 @@ public class Laser extends GameObject {
     }
 
     /**
-     * Every clock tick, move MOVE_DISTANCE. Check for reaching the top or colliding with another
+     * Every clock tick, move MOVE_DISTANCE. Check for reaching the top or colliding
+     * with another
      * object. If neither of these happen, change image every changeFreq ticks.
      */
     protected void update() {
@@ -65,8 +53,10 @@ public class Laser extends GameObject {
     }
 
     /**
-     * Check for a collision with an invader, a block or a missile, and if so, return the other
-     * object of the collision. A laser does not hit an explosion, the player, or another laser.
+     * Check for a collision with an invader, a block or a missile, and if so,
+     * return the other
+     * object of the collision. A laser does not hit an explosion, the player, or
+     * another laser.
      * 
      * @return the invader, block, or missile that the laser hit, if any
      */
@@ -98,8 +88,7 @@ public class Laser extends GameObject {
         isDead = true;
         other.collide(this);
         /* Create an explosion centered at the front/top of the laser. */
-        Explosion explosion =
-                new Explosion(x + WIDTH / 2 - Explosion.WIDTH / 2, y - Explosion.HEIGHT / 2, game);
+        Explosion explosion = new Explosion(x + WIDTH / 2 - Explosion.WIDTH / 2, y - Explosion.HEIGHT / 2, game);
         game.addExplosion(explosion);
     }
 }

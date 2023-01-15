@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package view;
 
 import java.awt.Component;
@@ -25,7 +12,8 @@ import javax.swing.BoxLayout;
 import javax.swing.Box;
 
 /**
- * A panel to welcome a user and give the choice between playing a game and viewing the high scores
+ * A panel to welcome a user and give the choice between playing a game and
+ * viewing the high scores
  * from past plays of the game.
  */
 public class WelcomePanel extends ViewPanel {
@@ -37,12 +25,14 @@ public class WelcomePanel extends ViewPanel {
     static final int BUTTON_HEIGHT = 30;
 
     /**
-     * Create the welcome panel, with the game name, a button to start the game, and a button to
+     * Create the welcome panel, with the game name, a button to start the game, and
+     * a button to
      * request past high scores be shown.
      * 
-     * @param width the width of the panel
-     * @param height the height of the panel
-     * @param listener the class listening for the event that signals a button was pressed
+     * @param width    the width of the panel
+     * @param height   the height of the panel
+     * @param listener the class listening for the event that signals a button was
+     *                 pressed
      */
     public WelcomePanel(int width, int height, ActionListener listener) {
         setSize(width, height);

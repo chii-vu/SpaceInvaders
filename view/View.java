@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package view;
 
 import java.awt.Component;
@@ -23,7 +10,8 @@ import javax.swing.JFrame;
 import model.GameInfoProvider;
 
 /**
- * The view of the model-view controller architecture. This view is a frame used to display various
+ * The view of the model-view controller architecture. This view is a frame used
+ * to display various
  * views of the game and its results.
  */
 public class View extends JFrame {
@@ -31,20 +19,25 @@ public class View extends JFrame {
     public static final int BORDER_WIDTH = 6;
 
     /*
-     * Dependent upon the status of the game, different views are displayed in the frame to show
-     * what is going on in the game. When the game is being shown, the game and score panels observe
-     * changes in the game, and use a game provider to access information from the game.
+     * Dependent upon the status of the game, different views are displayed in the
+     * frame to show
+     * what is going on in the game. When the game is being shown, the game and
+     * score panels observe
+     * changes in the game, and use a game provider to access information from the
+     * game.
      */
 
     /**
-     * Initialize the frame for the various views to be inserted into it, where width and height are
+     * Initialize the frame for the various views to be inserted into it, where
+     * width and height are
      * the dimensions for the game.
      */
     public View(int width, int height) {
         setTitle("Space Invaders");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         /*
-         * Width and height passed in are those for the game panel, so add enough height for the
+         * Width and height passed in are those for the game panel, so add enough height
+         * for the
          * title bar and the information panel, and enough width for the border.
          */
         setSize(width + BORDER_WIDTH, height + GameInfoPanel.HEIGHT + TITLE_BAR_HEIGHT);
@@ -53,7 +46,8 @@ public class View extends JFrame {
     }
 
     /**
-     * Set the frame visible showing the panel passed in, and set the focus in the Component
+     * Set the frame visible showing the panel passed in, and set the focus in the
+     * Component
      * obtained from the panel.
      * 
      * @param panel the panel to be shown in the view
@@ -79,7 +73,8 @@ public class View extends JFrame {
     }
 
     /**
-     * Construct a view showing high scores from past plays of the game, and make the view visible.
+     * Construct a view showing high scores from past plays of the game, and make
+     * the view visible.
      * 
      * @param actionListener the listener for a button press
      */
@@ -89,26 +84,30 @@ public class View extends JFrame {
     }
 
     /**
-     * Construct the view to allow the user to save his/her score, and make the view visible.
+     * Construct the view to allow the user to save his/her score, and make the view
+     * visible.
      * 
      * @param gameInfoProvider the access to the level and score in the game
-     * @param actionListener the listener for the key stroke Enter in the text field
+     * @param actionListener   the listener for the key stroke Enter in the text
+     *                         field
      */
     public void showSaveScoreView(GameInfoProvider gameInfoProvider, ActionListener actionListener) {
-        ViewPanel panel =
-                new SaveScorePanel(getWidth(), getHeight(), gameInfoProvider.getPlayerScore(),
-                        gameInfoProvider.getLevel(), actionListener);
+        ViewPanel panel = new SaveScorePanel(getWidth(), getHeight(), gameInfoProvider.getPlayerScore(),
+                gameInfoProvider.getLevel(), actionListener);
         displayPanel(panel);
     }
 
     /**
-     * Construct and make visible the view of the game where the panel with the game status is at
-     * the top, and a panel to the display of the game is in the middle. The two panels get the
-     * needed game information via the GameInfoProvider, and the game panel passes key events to the
+     * Construct and make visible the view of the game where the panel with the game
+     * status is at
+     * the top, and a panel to the display of the game is in the middle. The two
+     * panels get the
+     * needed game information via the GameInfoProvider, and the game panel passes
+     * key events to the
      * keyListener.
      * 
      * @param gameInfoProvider the access to the information about the game
-     * @param keyListener the listener for key strokes in a panel
+     * @param keyListener      the listener for key strokes in a panel
      */
     public void showNewGameView(GameInfoProvider gameInfoProvider, KeyListener keyListener) {
         ViewPanel overallPanel = new ViewPanel();
@@ -118,7 +117,8 @@ public class View extends JFrame {
         GameInfoPanel infoPanel = new GameInfoPanel(gameInfoProvider);
         infoPanel.setPreferredSize(new Dimension(getWidth(), GameInfoPanel.HEIGHT));
         overallPanel.add(infoPanel, BorderLayout.PAGE_START);
-        // the info panel is to be informed when the game changes so that it can be updated
+        // the info panel is to be informed when the game changes so that it can be
+        // updated
         gameInfoProvider.addObserver(infoPanel);
 
         GamePanel gamePanel = new GamePanel(keyListener, gameInfoProvider);

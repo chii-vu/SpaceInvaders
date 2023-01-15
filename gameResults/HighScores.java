@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package gameResults;
 
 import java.io.FileInputStream;
@@ -24,7 +11,8 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 
 /**
- * Maintains a list of the GameResults with highest scores. The list is initially read from disk by
+ * Maintains a list of the GameResults with highest scores. The list is
+ * initially read from disk by
  * the constructor, and saved to disk whenever the list is updated.
  */
 public class HighScores implements Serializable {
@@ -51,7 +39,7 @@ public class HighScores implements Serializable {
     public static HighScores getInstance() {
         if (instance == null) {
             instance = new HighScores();
-            if (instance.highScores.size() == 0){
+            if (instance.highScores.size() == 0) {
                 // some fictional high scores!!
                 instance.saveGameResult(new GameResult("w1ld1", 18660, 34));
                 instance.saveGameResult(new GameResult("...Me", 11590, 22));
@@ -74,7 +62,8 @@ public class HighScores implements Serializable {
     public LinkedList<GameResult> highScores;
 
     /**
-     * Read in the high scores for the game from disk and store them in the listed list highScores.
+     * Read in the high scores for the game from disk and store them in the listed
+     * list highScores.
      */
     @SuppressWarnings("unchecked")
     private HighScores() {
@@ -88,20 +77,23 @@ public class HighScores implements Serializable {
             objectIn.close();
         } catch (FileNotFoundException fnfe) {
             /*
-             * The file isn't found so this is the first play of the game, and no previous results
+             * The file isn't found so this is the first play of the game, and no previous
+             * results
              * exist.
              */
             highScores = new LinkedList<GameResult>();
         } catch (IOException ioe) {
             /*
-             * This should not happen unless the file name is invalid, but continue with no previous
+             * This should not happen unless the file name is invalid, but continue with no
+             * previous
              * results.
              */
             ioe.printStackTrace();
             highScores = new LinkedList<GameResult>();
         } catch (ClassNotFoundException cnfe) {
             /*
-             * This should not happen unless file name is invalid, but continue with no previous
+             * This should not happen unless file name is invalid, but continue with no
+             * previous
              * results.
              */
             cnfe.printStackTrace();

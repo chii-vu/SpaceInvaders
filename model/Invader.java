@@ -1,16 +1,3 @@
-/*
-  CMPT 270 Course Material
-  Copyright (c) 2003-2021
-  J.P. Tremblay and Grant Cheston
-  All rights reserved.
-
-  This document contains resources for homework assigned to students of
-  CMPT 270 and shall not be distributed without permission.  Posting this
-  file to a public or private website, or providing this file to any person
-  not registered in CMPT 270 constitutes Academic Misconduct according to
-  the University of Saskatchewan Policy on Academic Misconduct.
- */
-
 package model;
 
 import util.RandomNumberGenerator;
@@ -27,7 +14,6 @@ public class Invader extends GameObject {
     public static final int VERTICAL_SPEEDUP_PER_LEVEL = 6;
     protected int verticalMoveDistance;
 
-
     /** The probability of firing at each clock tick. */
     protected static final float FIRE_PROBABILITY = .001f;
 
@@ -38,7 +24,10 @@ public class Invader extends GameObject {
     public static final int MOVE_LEFT = -1;
     public static final int MOVE_RIGHT = 1;
 
-    /** The tick of the clock for the next time when all invaders switch direction and advance. */
+    /**
+     * The tick of the clock for the next time when all invaders switch direction
+     * and advance.
+     */
     public static int changeDirectionTick;
 
     /** How frequently (in terms of ticks) the invader is to change image. */
@@ -47,11 +36,11 @@ public class Invader extends GameObject {
     /**
      * Initialize this instance.
      * 
-     * @param x the initial x-coordinate
-     * @param y the initial y-coordinate
+     * @param x         the initial x-coordinate
+     * @param y         the initial y-coordinate
      * @param killWorth the value of killing this invader
-     * @param level the current level in the game
-     * @param game the game being played
+     * @param level     the current level in the game
+     * @param game      the game being played
      */
     public Invader(int x, int y, int killWorth, int level, Game game) {
         super(x, y, game, "invader");
@@ -66,7 +55,8 @@ public class Invader extends GameObject {
     }
 
     /**
-     * At each clock tick, decide whether to fire, and every changeFreq ticks move and change image.
+     * At each clock tick, decide whether to fire, and every changeFreq ticks move
+     * and change image.
      */
     protected void update() {
         float randomNum = RandomNumberGenerator.getInstance().getFloat();
